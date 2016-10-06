@@ -3,28 +3,28 @@ package com.abstractFactory.org;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Date;
 
 import com.pojo.BookEntry;
+import com.pojo.Employees;
 import com.pojo.NewBook;
 
-public class DBConnections implements KLBooksAdmin
+public class DBConnectionForEmployee implements KLBooksAdmin
 {
 	Connection connection = DataBaseEntity.getConnection();
 	
-	private static DBConnections jdbc;
+	private static DBConnectionForEmployee jdbc;
 	
-	private DBConnections()
+	private DBConnectionForEmployee()
 	{
 		
 	}
 	
-	public static DBConnections getInstance()
+	public static DBConnectionForEmployee getInstance()
 	{
 		if (jdbc == null)
 		{
-			jdbc = new DBConnections();
+			jdbc = new DBConnectionForEmployee();
 		}
 		return jdbc;
 	}
@@ -143,6 +143,76 @@ public class DBConnections implements KLBooksAdmin
 	
 	@Override
 	public BookEntry viewByDate(Date enterDate)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int insertNewEmployee(Employees insertNewEmployee)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateNewEmployeee(Employees updateAllField)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteEmployee(Employees deleteEmployee)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean checkEmployeeByEmailId(String emailId)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean checkEmployeeByMobilePhone(String mobileNo)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Employees viewEmployees()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employees searchEmployee(String employeeName)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employees aliveEmployees()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employees deadEmployees()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employees getEmployee(String userId, String password)
 	{
 		// TODO Auto-generated method stub
 		return null;
